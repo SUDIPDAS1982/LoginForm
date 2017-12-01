@@ -8,6 +8,7 @@ namespace LoginForm
 {
     static class Program
     {
+        public static clsLogin gLogin = new clsLogin();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
