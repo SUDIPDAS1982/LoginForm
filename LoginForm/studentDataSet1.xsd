@@ -41,7 +41,7 @@
   <xs:element name="studentDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="studentDataSet1" msprop:Generator_UserDSName="studentDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="login" msprop:Generator_TableClassName="loginDataTable" msprop:Generator_TableVarName="tablelogin" msprop:Generator_TablePropName="login" msprop:Generator_RowDeletingName="loginRowDeleting" msprop:Generator_RowChangingName="loginRowChanging" msprop:Generator_RowEvHandlerName="loginRowChangeEventHandler" msprop:Generator_RowDeletedName="loginRowDeleted" msprop:Generator_UserTableName="login" msprop:Generator_RowChangedName="loginRowChanged" msprop:Generator_RowEvArgName="loginRowChangeEvent" msprop:Generator_RowClassName="loginRow">
+        <xs:element name="login" msprop:Generator_TableClassName="loginDataTable" msprop:Generator_TableVarName="tablelogin" msprop:Generator_RowChangedName="loginRowChanged" msprop:Generator_TablePropName="login" msprop:Generator_RowDeletingName="loginRowDeleting" msprop:Generator_RowChangingName="loginRowChanging" msprop:Generator_RowEvHandlerName="loginRowChangeEventHandler" msprop:Generator_RowDeletedName="loginRowDeleted" msprop:Generator_RowClassName="loginRow" msprop:Generator_UserTableName="login" msprop:Generator_RowEvArgName="loginRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username" minOccurs="0">
@@ -58,6 +58,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="role" msprop:Generator_ColumnVarNameInTable="columnrole" msprop:Generator_ColumnPropNameInRow="role" msprop:Generator_ColumnPropNameInTable="roleColumn" msprop:Generator_UserColumnName="role" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

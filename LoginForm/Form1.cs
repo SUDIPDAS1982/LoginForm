@@ -37,7 +37,7 @@ namespace LoginForm
             con.Open();
             Program.gLogin.UserName = textBox1.Text;
             Program.gLogin.Password = textBox2.Text;
-            SqlCommand cmd = new SqlCommand("select username,password from login where username='" + textBox1.Text + "'and password='" + textBox2.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("select username,password, role from login where username='" + textBox1.Text + "'and password='" + textBox2.Text + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             string pLogInDate = DateTime.Now.ToShortDateString();
@@ -45,11 +45,20 @@ namespace LoginForm
             da.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Login sucess.");
-                this.Hide();
-                Form2 pFrm2 = new Form2();
-                pFrm2.ShowDialog();
-                
+                if(dt.Rows[0][2].ToString()=="admin")
+                {
+                    MessageBox.Show("Login sucess.");
+                    this.Hide();
+                    Form4 pFrm4 = new Form4();
+                    pFrm4.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Login sucess.");
+                    this.Hide();
+                    Form2 pFrm2 = new Form2();
+                    pFrm2.ShowDialog();
+                }
             }
             else
             {

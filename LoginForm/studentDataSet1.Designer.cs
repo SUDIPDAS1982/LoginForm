@@ -283,6 +283,8 @@ namespace LoginForm {
             
             private global::System.Data.DataColumn columnpassword;
             
+            private global::System.Data.DataColumn columnrole;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public loginDataTable() {
@@ -334,6 +336,14 @@ namespace LoginForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn roleColumn {
+                get {
+                    return this.columnrole;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -369,11 +379,12 @@ namespace LoginForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public loginRow AddloginRow(string username, string password) {
+            public loginRow AddloginRow(string username, string password, string role) {
                 loginRow rowloginRow = ((loginRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         username,
-                        password};
+                        password,
+                        role};
                 rowloginRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowloginRow);
                 return rowloginRow;
@@ -398,6 +409,7 @@ namespace LoginForm {
             internal void InitVars() {
                 this.columnusername = base.Columns["username"];
                 this.columnpassword = base.Columns["password"];
+                this.columnrole = base.Columns["role"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -407,6 +419,8 @@ namespace LoginForm {
                 base.Columns.Add(this.columnusername);
                 this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpassword);
+                this.columnrole = new global::System.Data.DataColumn("role", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrole);
                 this.columnusername.MaxLength = 2147483647;
                 this.columnpassword.MaxLength = 2147483647;
             }
@@ -583,6 +597,22 @@ namespace LoginForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string role {
+                get {
+                    try {
+                        return ((string)(this[this.tablelogin.roleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'role\' in table \'login\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelogin.roleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsusernameNull() {
                 return this.IsNull(this.tablelogin.usernameColumn);
             }
@@ -603,6 +633,18 @@ namespace LoginForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpasswordNull() {
                 this[this.tablelogin.passwordColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsroleNull() {
+                return this.IsNull(this.tablelogin.roleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetroleNull() {
+                this[this.tablelogin.roleColumn] = global::System.Convert.DBNull;
             }
         }
         

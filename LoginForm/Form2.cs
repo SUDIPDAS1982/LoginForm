@@ -88,5 +88,12 @@ namespace LoginForm
         {
             Application.Exit();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 pFrm3 = new Form3();
+            pFrm3.ShowDialog();
+        }
     }
 }
